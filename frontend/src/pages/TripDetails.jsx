@@ -12,7 +12,7 @@ const TripDetails = () => {
   const { authUser } = useAuthStore();
   const [inviteEmail, setInviteEmail] = useState("");
   const [newTodo, setNewTodo] = useState("");
-  const [memberDetails, setMemberDetails] = useState([]); // ✅ Add state for member details
+  const [memberDetails, setMemberDetails] = useState([]); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const TripDetails = () => {
     }
   }, [tripId]);
 
-  // ✅ Fetch member details when trip is loaded
+  // Fetch member details when trip is loaded
   useEffect(() => {
     const fetchMemberDetails = async () => {
       if (trip?.members && Array.isArray(trip.members)) {
@@ -90,7 +90,7 @@ const TripDetails = () => {
     await deleteTodo(trip._id, todoId);
   };
 
-  // ✅ Check if createdBy is populated or just an ID
+  // Check if createdBy is populated or just an ID
   const isCreator = authUser && (
     (trip.createdBy._id && authUser._id === trip.createdBy._id) ||
     (typeof trip.createdBy === 'string' && authUser._id === trip.createdBy)
@@ -155,42 +155,6 @@ const TripDetails = () => {
                         <p className="text-lg font-semibold text-slate-800">{trip.members?.length || 1}</p>
                        </div>
                      </div>
-                    {/* ✅ FIXED: Use memberDetails state */}
-                    {/* <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
-                      <span className="text-2xl">👥</span>
-                      <div>
-                        <p className="text-sm font-medium text-slate-600">Trip Members</p>
-                        <p className="text-lg font-semibold text-slate-800">
-                          {memberDetails.length || 1} member{memberDetails.length !== 1 ? "s" : ""}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {memberDetails.length > 0 ? (
-                            memberDetails.map((member) => {
-                              const displayName = member.name || 
-                                                member.email?.split('@')[0] || 
-                                                'Unknown User';
-                              
-                              const memberId = member._id;
-                              const creatorId = trip.createdBy._id || trip.createdBy;
-                              const isMemberCreator = memberId === creatorId;
-                              
-                              return (
-                                <span
-                                  key={memberId}
-                                  className="bg-slate-100 text-slate-700 text-sm px-3 py-1 rounded-full shadow-sm border border-slate-200"
-                                >
-                                  {displayName}{isMemberCreator ? " (Creator)" : ""}
-                                </span>
-                              );
-                            })
-                          ) : (
-                            <span className="bg-slate-100 text-slate-700 text-sm px-3 py-1 rounded-full shadow-sm border border-slate-200">
-                              Loading members...
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                   
                   <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
