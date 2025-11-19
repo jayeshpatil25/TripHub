@@ -8,7 +8,7 @@ const Home = () => {
     const { authUser } = useAuthStore();
     const handleStartPlanning = () => {
     if (authUser) {
-      navigate("/dashboard"); // or "/dashboard"
+      navigate("/dashboard"); 
     } else {
       navigate("/login");
     }
@@ -16,7 +16,6 @@ const Home = () => {
 
   return (
     <>
-    {/* Background Image not visible, check if the path is correct */}
     <div
       className="h-[100vh] bg-cover bg-center relative flex items-center justify-center text-white"
       style={{ backgroundImage: `url(${bg})` }}
