@@ -1,4 +1,3 @@
-// src/components/TodoList.jsx
 import React, { useState } from 'react';
 import { useTripStore } from '../store/useTripStore';
 import { CheckIcon, TrashIcon } from '@heroicons/react/24/outline';

@@ -1,6 +1,6 @@
 import { FaPlaneDeparture } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logo from '../assets/logo-transparent.png'; // Adjust the path as necessary
+import logo from '../assets/logo-transparent.png';
 
 const HomeNavbar = () => {
   return (

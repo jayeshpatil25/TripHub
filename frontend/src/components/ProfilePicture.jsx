@@ -1,4 +1,4 @@
-// src/components/ProfilePicture.jsx
+
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { axiosInstance } from "../api";

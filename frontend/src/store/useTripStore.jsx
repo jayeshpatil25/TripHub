@@ -1,4 +1,4 @@
-// src/store/useTripStore.js
+
 import { create } from 'zustand';
 import { axiosInstance } from '../api';
 
@@ -22,7 +22,7 @@ export const useTripStore = create((set, get) => ({
     set({ trip: normalizedTrip });
   },
 
-  // ✅ FIXED: This function now properly sets both selectedTrip AND trip
+  // This function sets both selectedTrip AND trip
   fetchTripById: async (tripId) => {
     if (!tripId) return;
     try {
@@ -30,7 +30,7 @@ export const useTripStore = create((set, get) => ({
       if (res.data && res.data._id) {
         // Set both selectedTrip and trip with the populated data
         get().setSelectedTrip(res.data);
-        get().setTrip(res.data); // ✅ This was missing!
+        get().setTrip(res.data); //  This was missing!
       }
     } catch (err) {
       console.error('Failed to fetch trip:', err);
@@ -109,7 +109,7 @@ export const useTripStore = create((set, get) => ({
     }
   },
 
-  // Pin functions - Fixed
+  // Pin functions 
   getSavedPins: async (tripId) => {
     if (!tripId) return [];
     

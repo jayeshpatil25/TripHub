@@ -9,10 +9,10 @@ export const useChatStore = create((set, get) => ({
   messages: [],
   typingUsers: [],
   socket,
-  authUser: null, // 🟢 store it
+  authUser: null, //  store it
 
   initSocketListeners: (tripId, authUser) => {
-    set({ authUser }); // ✅ set in store
+    set({ authUser }); //  set in store
     socket.emit('join-trip', { tripId, userId: authUser._id });
 
     socket.off('receive-message').on('receive-message', (message) => {
@@ -51,7 +51,7 @@ export const useChatStore = create((set, get) => ({
     socket.emit('send-message', {
       tripId,
       userId,
-      text, // ✅ only send text
+      text, //  only send text
     });
   },
 

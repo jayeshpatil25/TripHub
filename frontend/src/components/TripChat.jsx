@@ -55,7 +55,7 @@ const ChatBox = () => {
                             }`}
                     >
                         <div className="text-sm font-medium text-gray-800">
-                            {msg.senderName || 'User'} {/* 🟢 Use persisted name */}
+                            {msg.senderName || 'User'} {/*  Use persisted name */}
                         </div>
                         <div className="text-gray-700 text-sm">{msg.text}</div>
                         <div className="text-xs text-gray-400 text-right">

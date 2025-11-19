@@ -1,4 +1,3 @@
-// src/components/TripAIAssistant.jsx
 import React, { useState } from "react";
 import { axiosInstance } from "@/api";
 import { toast } from "react-toastify";

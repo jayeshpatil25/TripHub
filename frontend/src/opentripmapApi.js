@@ -1,4 +1,3 @@
-// src/opentripmapApi.js
 import axios from "axios";
 
 export const tripMapInstance = axios.create({

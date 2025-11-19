@@ -8,7 +8,7 @@ const createTrip = async (req, res) => {
     const trip = await Trip.create({
       name,
       destination,
-      destinationCoordinates, // ✅ save coords
+      destinationCoordinates, //  save coords
       startDate,
       endDate,
       createdBy: req.userId,
@@ -35,7 +35,7 @@ const getUserTrips = async (req,res) => {
 
 // controllers/tripController.js
 const joinTrip = async (req, res) => {
-  const tripId = req.params.id;  // ✅ FIXED
+  const tripId = req.params.id;  
   const userId = req.userId;
 
   console.log("Join Trip Request", { tripId, userId });
@@ -96,7 +96,7 @@ const addTodo = async (req, res) => {
 
     // Send back the newly added todo
     const addedTodo = trip.todos[trip.todos.length - 1];
-    res.status(201).json(addedTodo); // ✅ this must return the todo
+    res.status(201).json(addedTodo); // this must return the todo
   } catch (err) {
     console.error("Failed to add todo:", err);
     res.status(500).json({ message: "Internal server error" });

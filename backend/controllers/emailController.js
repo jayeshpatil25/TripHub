@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 const sendTripInvite = async (req, res) => {
     const { tripId, receiverEmail } = req.body;
-    const senderId = req.userId; // FIXED
+    const senderId = req.userId; 
 
     try {
         const trip = await Trip.findById(tripId).populate('createdBy');

@@ -13,7 +13,7 @@
   import { useTripStore } from "@/store/useTripStore";
   import { useAuthStore } from "@/store/useAuthStore";
 
-  // Fix Leaflet icon paths
+
   delete L.Icon.Default.prototype._getIconUrl;
   L.Icon.Default.mergeOptions({
     iconRetinaUrl:

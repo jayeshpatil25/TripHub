@@ -15,7 +15,6 @@ router.post('/profile-picture', auth, upload.single('profilePic'), uploadProfile
 router.delete('/profile-picture', auth, deleteProfilePic);
 
 
-// Add this endpoint to your backend
 router.post('/getUsersByIds', async (req, res) => {
   try {
     const { userIds } = req.body;
